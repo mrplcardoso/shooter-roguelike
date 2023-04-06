@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Utility.EventCommunication;
 
 /* Classe que descreve e abstrai quartos das dungeons aleatórias
  * Esse quartos são representados no Unity por GameObjects vazios
  * que contém como filhos dois tilemaps
  */
-public class DungeonRoom : MonoBehaviour
+public class DungeonRoom : MonoBehaviour, IPlayerReact
 {
 	public List<OpeningRoom> openings;
 	public List<DungeonRoom> sidePath;
@@ -45,6 +46,11 @@ public class DungeonRoom : MonoBehaviour
 		UpdateOpeningsPosition();
 		roomTileMap = GetComponentsInChildren<Tilemap>();
 		enemyCapacity = 2;
+	}
+
+	private void Start()
+	{
+		EventHub.Publish(EventList.ReactionToPlayer, new EventData(this));
 	}
 
 	public void UpdateOpeningsPosition()
@@ -89,5 +95,13 @@ public class DungeonRoom : MonoBehaviour
 	{
 		return gridPosition +
 			Vector2Int.FloorToInt((openings[index].position - transform.position).normalized);
+	}
+
+	public void Reaction(Vector2 position)
+	{
+		if ((position - (Vector2)transform.position).sqrMagnitude < 144)
+		{ gameObject.SetActive(true); }
+		else
+		{ gameObject.SetActive(false); }
 	}
 }

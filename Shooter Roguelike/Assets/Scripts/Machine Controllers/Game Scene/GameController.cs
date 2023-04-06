@@ -4,6 +4,6 @@ public class GameController : AbstractMachine
 {
     void Start()
     {
-        ChangeStateCoroutine<LoadGame>();
+        ChangeState<LoadGame>();
     }
 }

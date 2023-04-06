@@ -1,3 +1,4 @@
+using Codice.Client.BaseCommands;
 using System;
 using UnityEngine;
 
@@ -620,6 +621,24 @@ namespace Utility.Random
 			//Retorna o valor sorteado e transformado de uma "curva do sino", 
 			//ajustado dentro do intervalo [min, max] inclusivo
 			return Mathf.Clamp(rand, min, max);
+		}
+
+		/// <summary>
+		/// Returns a number from Normal Distribution. This method uses global RNG.
+		/// </summary>
+		/// <param name="mean">Mean of the distribution.Higher occurrence.</param>
+		/// <param name="sigma">Standard deviation.</param>
+		/// <returns>A random value within a Normal Distribuition.</returns>
+		public static float NormalDistributionMean(float mean, float sigma)
+		{
+			//Pega um valor aleatório de uma distribuição normal
+			float rand = StandardNormalDistribuitionNumber();
+			//Transforma a distribuição criada: valor original vem com a média posicinada em 0, e desvio padrão de 1
+			//Reposicina a "média" para a média escolhida (mean) e 
+			//escala o desvio padrão (1) com o valor desejado (sigma)
+			rand = (rand * sigma) + mean;
+			//Retorna o valor sorteado e transformado de uma "curva do sino"
+			return rand;
 		}
 
 		/*****     Non-Uniform Vector    *****/

@@ -8,6 +8,6 @@ public class StartGame : GameState
   {
     EventHub.Publish(EventList.TransitionOff);
     yield return new WaitForSeconds(0.8f);
-    gameMachine.ChangeState<UpdateTitle>();
+    gameMachine.ChangeStateCoroutine<UpdateGame>();
   }
 }

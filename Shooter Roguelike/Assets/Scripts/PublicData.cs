@@ -6,7 +6,7 @@ using Utility.Random;
 public static class PublicData
 {
 	public static RandomStream randomStream { get; private set; }
-	public static int numberOfMainRooms = 3;
+	public static int numberOfMainRooms = 10;
 	public static int numberOfSideRooms = 1;
 	public static int depthOfSidePaths = 1;
 	public static int currentLevel = 1;

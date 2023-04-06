@@ -175,7 +175,7 @@ namespace Utility.FSM
 			T s = (addState ? AddState<T>() : HasState<T>(setEnabled));
 			if (s == null || s == runningState || inTransition)
 			{ return; }
-
+			
 			if (setEnabled)
 			{
 				if (!states.Contains(s))
@@ -203,7 +203,7 @@ namespace Utility.FSM
 			T s = (addState ? AddState<T>() : HasState<T>(setEnabled));
 			if (s == null || s == runningState || inTransition)
 			{ return; }
-
+			
 			if (setEnabled)
 			{
 				if (!states.Contains(s))
@@ -244,7 +244,7 @@ namespace Utility.FSM
 			if (runningState != null)
 			{ yield return runningState.OnExitIntervaled(); }
 			runningState = nextState;
-
+			
 			if (intervalTime <= 0)
 			{ yield return null; }
 			else

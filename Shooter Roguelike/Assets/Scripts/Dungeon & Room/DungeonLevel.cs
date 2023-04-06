@@ -8,6 +8,8 @@ using Utility.Random;
 
 public class DungeonLevel : MonoBehaviour
 {
+	public static DungeonLevel dungeon {  get; private set; }
+
 	//Grid criado por c�digo
 	//Guarda o GameObject Grid que mant�m os quartos
 	[SerializeField]
@@ -50,18 +52,33 @@ public class DungeonLevel : MonoBehaviour
 
 	const int limitTries = 100;
 
-	private void Awake()
+	void Awake()
+	{
+		DungeonLevel[] d = FindObjectsOfType<DungeonLevel>();
+		for (int i = 0; i < d.Length; i++)
+		{
+			if (d[i] != this)
+			{ Destroy(this); return; }
+		}
+		dungeon = this;
+	}
+
+	private void Start()
 	{
 		CreateRandomStream();
 		CreateGrid();
 		level = new List<DungeonRoom>();
 		MainPath();
 		DepthPath();
+
+		StartCoroutine(PublishGeneration());
 	}
 
-	private void Start()
+	IEnumerator PublishGeneration()
 	{
+		yield return null;
 		CloseRooms();
+		yield return null;
 		EventHub.Publish(EventList.RoomGenerationCompleted);
 	}
 
@@ -282,6 +299,9 @@ public class DungeonLevel : MonoBehaviour
 
 	void CreateRandomStream()
 	{
+		if(PublicData.randomStream == null)
+		{ PublicData.Initialize(seed); }
+
 		randomStream = PublicData.randomStream;
 		seed = randomStream.seed;
 	}

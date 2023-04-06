@@ -1,16 +1,19 @@
-﻿using System.Collections;
-using UnityEngine;
-using Utility.EventCommunication;
+﻿using Utility.EventCommunication;
 
 public class LoadGame : GameState
 {
 	void Awake()
 	{
-
+		EventHub.Subscribe(EventList.RoomGenerationCompleted, WaitGeneration);
 	}
 
-	void WaitGeneration()
+	void WaitGeneration(EventData data)
 	{
-		EventHub.Publish(EventList.TransitionOff);
+		gameMachine.ChangeStateCoroutine<StartGame>(0.1f);
+	}
+
+	private void OnDestroy()
+	{
+		EventHub.UnSubscribe(EventList.RoomGenerationCompleted, WaitGeneration);
 	}
 }

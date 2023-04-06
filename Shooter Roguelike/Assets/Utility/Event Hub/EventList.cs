@@ -3,8 +3,16 @@ namespace Utility.EventCommunication
 	public static class EventList
 	{
 		public const string Empty = "Empty";
+
+		public const string ReactionToPlayer = "Reaction To Player";
+
+		public const string OnClickGround = "On Click Ground";
+		public const string OnClickEnemy = "On Click Enemy";
+
 		public const string RoomGenerationCompleted = "Room Generation Completed";
 		public const string ShakeCamera = "Shake Camera";
+
+		public const string AddUpdatable = "Add Updatable";
 
 		#region Transition Screen
 		public const string TransitionOn = "TransitionOn";
