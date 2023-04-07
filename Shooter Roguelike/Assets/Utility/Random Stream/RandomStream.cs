@@ -586,6 +586,7 @@ namespace Utility.Random
 			float sigma = (max - mean) / cutOff;
 			//Pega um valor aleatório de uma distribuição normal
 			float rand = standardNormalDistribuitionNumber();
+			rand = Mathf.Clamp(rand, -1f, 1f);
 			//Transforma a distribuição criada: valor original vem com a média posicinada em 0, e desvio padrão de 1
 			//Reposicina a "média" para a média escolhida (mean) e 
 			//escala o desvio padrão (1) com o valor desejado (sigma)
@@ -614,6 +615,7 @@ namespace Utility.Random
 			float sigma = (max - mean) / cutOff;
 			//Pega um valor aleatório de uma distribuição normal
 			float rand = StandardNormalDistribuitionNumber();
+			rand = Mathf.Clamp(rand, -1f, 1f);
 			//Transforma a distribuição criada: valor original vem com a média posicinada em 0, e desvio padrão de 1
 			//Reposicina a "média" para a média escolhida (mean) e 
 			//escala o desvio padrão (1) com o valor desejado (sigma)
@@ -626,13 +628,14 @@ namespace Utility.Random
 		/// <summary>
 		/// Returns a number from Normal Distribution. This method uses global RNG.
 		/// </summary>
-		/// <param name="mean">Mean of the distribution.Higher occurrence.</param>
+		/// <param name="mean">Mean of the distribution. Higher occurrence.</param>
 		/// <param name="sigma">Standard deviation.</param>
 		/// <returns>A random value within a Normal Distribuition.</returns>
 		public static float NormalDistributionMean(float mean, float sigma)
 		{
 			//Pega um valor aleatório de uma distribuição normal
 			float rand = StandardNormalDistribuitionNumber();
+			rand = Mathf.Clamp(rand, -1f, 1f);
 			//Transforma a distribuição criada: valor original vem com a média posicinada em 0, e desvio padrão de 1
 			//Reposicina a "média" para a média escolhida (mean) e 
 			//escala o desvio padrão (1) com o valor desejado (sigma)

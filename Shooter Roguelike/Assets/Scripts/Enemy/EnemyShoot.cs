@@ -5,7 +5,7 @@ public class EnemyShoot : MonoBehaviour
 {
 	EnemyUnit enemy;
 	[SerializeField] Cannon[] cannons;
-	public float fireRate = 1f;
+	public float fireRate;
 
 	private void Awake()
 	{
@@ -16,6 +16,12 @@ public class EnemyShoot : MonoBehaviour
 	{
 		enemy.FrameAction += Shoot;
 		cannons = GetComponentsInChildren<Cannon>();
+	}
+
+	public void SetStat(float fireRate, float damage)
+	{
+		this.fireRate = Mathf.Abs(fireRate) + 0.5f;
+		this.damage = Mathf.Abs(damage) + 1f;
 	}
 
 	#region Shoot

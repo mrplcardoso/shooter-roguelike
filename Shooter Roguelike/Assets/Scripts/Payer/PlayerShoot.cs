@@ -6,6 +6,7 @@ using Utility.EventCommunication;
 public class PlayerShoot : MonoBehaviour
 {
 	Cannon[] cannons;
+	float damage = 1f;
 
 	private void Awake()
 	{
@@ -17,7 +18,7 @@ public class PlayerShoot : MonoBehaviour
 	{
 		for (int i = 0; i < cannons.Length; ++i)
 		{
-			cannons[i].Shoot();
+			cannons[i].Shoot(damage);
 		}
 	}
 }

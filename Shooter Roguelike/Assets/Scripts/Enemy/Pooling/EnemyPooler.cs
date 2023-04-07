@@ -27,9 +27,10 @@ public class EnemyPooler : MonoBehaviour
 		PoolableEnemy e = enemyTable[type].GetObject();
 		if(e != null)
 		{
-			float f = RandomStream.NormalDistributionMean(statTable[type]["fire rate"], 0.2f);
+			float f = RandomStream.NormalDistributionMean(statTable[type]["fire rate"], 1f);
 			float d = RandomStream.NormalDistributionMean(statTable[type]["damage"], 2f);
-			e.enemy.SetStat(f, d);
+			float l = RandomStream.NormalDistributionMean(statTable[type]["life"], 2f);
+			e.enemy.SetStat(f, d, l);
 		}
 
 		return e;

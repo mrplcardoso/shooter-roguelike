@@ -48,17 +48,16 @@ public class PlayerMove : MonoBehaviour
 
 	private void Move()
 	{
-		if(onTarget) { player.PhysicsAction -= Move; moving = false; return; }
+		if (onTarget) { player.PhysicsAction -= Move; moving = false; return; }
 
 		body.rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
 		body.MovePosition(Vector2.MoveTowards(body.position,
 			target, speed * Time.fixedDeltaTime));
-
-		reactions(transform.position);
 	}
 
 	void MoveCamera()
 	{
+		reactions(transform.position);
 		camera.Move(body.position, Time.fixedDeltaTime);
 	}
 

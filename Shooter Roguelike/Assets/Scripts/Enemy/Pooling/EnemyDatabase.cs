@@ -36,12 +36,14 @@ public class EnemyDatabase : ScriptableObject
 	public EnemyStatTable LoadStat()
 	{
 		EnemyStatTable table = new EnemyStatTable();
-		Dictionary<string, float> d = new Dictionary<string, float>();
+		Dictionary<string, float> d;
 
 		for (int i = 0; i < enemies.Length; ++i)
 		{
+			d = new Dictionary<string, float>();
 			d.Add("damage", enemies[i].averageDamage);
 			d.Add("fire rate", enemies[i].averageFireRate);
+			d.Add("life", enemies[i].averageLife);
 			table.Add(enemies[i].type, d);
 		}
 

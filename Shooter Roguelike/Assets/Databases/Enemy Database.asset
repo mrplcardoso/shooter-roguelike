@@ -17,19 +17,34 @@ MonoBehaviour:
     prefab: {fileID: 3784650834953738341, guid: d86e7aeb0635c504c925d04e639dc9be, type: 3}
     startSize: 10
     type: 0
+    averageFireRate: 5
+    averageDamage: 1
+    averageLife: 2
   - name: B2
     prefab: {fileID: 3784650834953738341, guid: 94ea64b24a3b850459c9b256393bf7b8, type: 3}
     startSize: 10
     type: 1
+    averageFireRate: 4
+    averageDamage: 2
+    averageLife: 3
   - name: C3
     prefab: {fileID: 3784650834953738341, guid: cc947b38639a4d8408efe915a54eb803, type: 3}
     startSize: 10
     type: 2
+    averageFireRate: 3
+    averageDamage: 3
+    averageLife: 4
   - name: D4
     prefab: {fileID: 3784650834953738341, guid: 5e7ff1fabd5074443bd95bf159366e46, type: 3}
     startSize: 10
     type: 3
+    averageFireRate: 2
+    averageDamage: 4
+    averageLife: 5
   - name: E5
     prefab: {fileID: 3784650834953738341, guid: 217cf3938e318c04581e26802343356f, type: 3}
     startSize: 10
     type: 4
+    averageFireRate: 1
+    averageDamage: 5
+    averageLife: 6
