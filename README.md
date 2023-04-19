@@ -1,11 +1,13 @@
 # shooter-roguelike
-This game was made as content for a video game development course. It represents a study on random generation and procedural generation of elements. 
+This game was made as content for a video game development course, focussed in study on random generation and procedural generation of elements. 
 Please disregard any limitations or inconveniences, and enjoy.
 
 Release: (link under construction)
 
 ## Authors
-Marcos Cardoso (<a href=https://github.com/mrplcardoso>@mrplcardoso</a>)
+Marcos Cardoso 
+<a href=https://github.com/mrplcardoso>@mrplcardoso</a>
+mrplcardoso@gmail.com
 
 ## Requirements
 Unity 2022.3  
