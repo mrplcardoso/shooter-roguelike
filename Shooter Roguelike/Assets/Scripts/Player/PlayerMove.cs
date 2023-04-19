@@ -35,6 +35,12 @@ public class PlayerMove : MonoBehaviour
 		player.PhysicsAction += MoveCamera;
 	}
 
+	private void OnDestroy()
+	{
+		EventHub.UnSubscribe(EventList.OnClickGround, OnClickGround);
+		EventHub.UnSubscribe(EventList.ReactionToPlayer, AddReactions);
+	}
+
 	void OnClickGround(EventData data)
 	{
 		target = (Vector3)data.eventInformation;

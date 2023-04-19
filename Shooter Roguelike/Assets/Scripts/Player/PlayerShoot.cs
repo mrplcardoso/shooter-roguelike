@@ -16,9 +16,15 @@ public class PlayerShoot : MonoBehaviour
 
 	private void Shoot(EventData data)
 	{
+		//TODO: add interval
 		for (int i = 0; i < cannons.Length; ++i)
 		{
 			cannons[i].Shoot(damage);
 		}
+	}
+
+	private void OnDestroy()
+	{
+		EventHub.UnSubscribe(EventList.OnClickEnemy, Shoot);
 	}
 }

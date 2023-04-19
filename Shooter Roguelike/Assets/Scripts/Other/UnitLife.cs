@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UnitLife : MonoBehaviour
 {
 	[SerializeField] Image bar;
+	public Canvas lifeCanvas;
 	[SerializeField] float maxLife;
 
 	public Action OnDeath;
@@ -16,7 +17,8 @@ public class UnitLife : MonoBehaviour
 
 	private void Start()
 	{
-		bar = GetComponentInChildren<Image>();
+		if (bar == null) { PrintConsole.Error(name + " life bar not set in Inspector"); }
+		lifeCanvas = bar.GetComponentInParent<Canvas>();
 		current = maxLife;
 	}
 
@@ -42,7 +44,6 @@ public class UnitLife : MonoBehaviour
 		{
 			BulletUnit bullet = collision.GetComponent<BulletUnit>();
 			ChangeBy(-bullet.damage);
-			bullet.poolable.Deactivate();
 
 			if(current <= 0)
 			{

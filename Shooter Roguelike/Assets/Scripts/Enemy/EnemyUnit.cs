@@ -57,6 +57,7 @@ public class EnemyUnit : UnitObject, IPlayerReact
 	void DeActivate()
 	{
 		pool.Deactivate();
+		EventHub.Publish(EventList.EnemyKilled, new EventData(this));
 	}
 
 	public void Reaction(Vector2 position)

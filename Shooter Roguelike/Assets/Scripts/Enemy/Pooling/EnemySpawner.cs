@@ -4,8 +4,7 @@ using Utility.EventCommunication;
 using Utility.Random;
 
 public class EnemySpawner : MonoBehaviour, IUpdatable
-{
-	int enemiesPerLevel = 5;
+{ 
 	int spawns = 0;
 	float elapsedTime;
 
@@ -22,7 +21,7 @@ public class EnemySpawner : MonoBehaviour, IUpdatable
 
 	public void FrameUpdate()
 	{
-		if(spawns == enemiesPerLevel)
+		if(spawns == PublicData.enemiesPerLevel)
 		{ gameObject.SetActive(false); }
 
 		if (pauseSpawn) { return; }

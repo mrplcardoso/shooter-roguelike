@@ -292,7 +292,7 @@ public class DungeonLevel : MonoBehaviour
 		tileCells = roomCells;
 		halfTileCell = roomCells / 2;
 
-		numberOfMainRooms = PublicData.numberOfMainRooms;
+		numberOfMainRooms = PublicData.currentMainPath;
 		numberOfSideRooms = PublicData.numberOfSideRooms;
 		depthOfSidePaths = PublicData.depthOfSidePaths;
 	}
@@ -415,7 +415,6 @@ public class DungeonLevel : MonoBehaviour
 	public Vector2 RandomRoomPosition()
 	{
 		DungeonRoom room = level[RandomStream.NextInt(0, level.Count)];
-		print(room.enemyCapacity);
 		if(room.enemyCapacity == 0)
 		{ return Vector2.down * 5000; }
 		room.enemyCapacity--;

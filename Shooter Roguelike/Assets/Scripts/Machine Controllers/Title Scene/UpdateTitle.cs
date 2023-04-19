@@ -5,30 +5,30 @@ using TMPro;
 
 public class UpdateTitle : TitleState
 {
-    [SerializeField] Button button;
-    [SerializeField] TMP_InputField input;
+  [SerializeField] Button button;
+  [SerializeField] TMP_InputField input;
 
-    void Start()
-    {
-        input.interactable = false;
-        button.interactable = false;
-        button.onClick.AddListener(OnButtonPressed);
-    }
+  void Start()
+  {
+    input.interactable = false;
+    button.interactable = false;
+    button.onClick.AddListener(OnButtonPressed);
+  }
 
-    public override void OnEnter()
-    {
-        input.interactable = true;
-        button.interactable = true;
-    }
+  public override void OnEnter()
+  {
+    input.interactable = true;
+    button.interactable = true;
+  }
 
-    void OnButtonPressed()
-    {
-        input.interactable = false;
-        button.interactable = false;
+  void OnButtonPressed()
+  {
+    input.interactable = false;
+    button.interactable = false;
 
-        int seed = int.Parse(input.text);
-        PublicData.Initialize(seed);
+    int seed = int.Parse(input.text);
+    PublicData.Initialize(seed);
 
-        titleMachine.ChangeStateCoroutine<ExitTitle>(0.1f);
-    }
+    titleMachine.ChangeStateCoroutine<ExitTitle>(0.1f);
+  }
 }

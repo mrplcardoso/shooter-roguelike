@@ -13,6 +13,11 @@ public class PoolableBullet : MonoBehaviour, IPoolableObject
 		bullet = GetComponent<BulletUnit>();
 	}
 
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		Deactivate();
+	}
+
 	#region Pooling
 
 	public int poolIndex { get { return id; } set { id = id == -1 ? value : id; } }

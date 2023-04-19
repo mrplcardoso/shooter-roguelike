@@ -5,9 +5,11 @@ namespace Utility.EventCommunication
 		public const string Empty = "Empty";
 
 		public const string ReactionToPlayer = "Reaction To Player";
+		public const string EndGame = "End Game";
 
 		public const string OnClickGround = "On Click Ground";
 		public const string OnClickEnemy = "On Click Enemy";
+		public const string EnemyKilled = "Enemy Killed";
 
 		public const string RoomGenerationCompleted = "Room Generation Completed";
 		public const string ShakeCamera = "Shake Camera";
