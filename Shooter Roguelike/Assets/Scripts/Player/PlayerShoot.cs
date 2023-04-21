@@ -19,6 +19,7 @@ public class PlayerShoot : MonoBehaviour
 		//TODO: add interval
 		for (int i = 0; i < cannons.Length; ++i)
 		{
+			PublicData.totalShoots++;
 			cannons[i].Shoot(damage);
 		}
 	}

@@ -16,6 +16,7 @@ public static class PublicData
 	public static int currentLevel { get; private set; }
 
 	public static int enemiesPerLevel { get { return (minLevelSpawns * currentLevel) + currentMainPath; } }
+	public static int itensPerLevel { get { return 1 + (int)(enemiesPerLevel * 0.2f); } }
 
 	public static int totalSeconds = 7500;
 	public static int totalShoots = 100;
@@ -27,6 +28,11 @@ public static class PublicData
 		randomStream = new RandomStream(seed);
 		currentMainPath = initialMainPath;
 		currentLevel = 1;
+
+		totalSeconds = (int)Time.realtimeSinceStartup;
+		totalShoots = 0;
+		totalItens = 0;
+		seedUsed = seed;
 	}
 
 	public static void AddLevel()

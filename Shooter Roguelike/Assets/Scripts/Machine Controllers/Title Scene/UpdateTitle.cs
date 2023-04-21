@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Utility.Random;
 
 public class UpdateTitle : TitleState
 {
@@ -27,6 +28,8 @@ public class UpdateTitle : TitleState
     button.interactable = false;
 
     int seed = int.Parse(input.text);
+    if(seed <= 0) { seed = (int)Time.realtimeSinceStartup; }
+		
     PublicData.Initialize(seed);
 
     titleMachine.ChangeStateCoroutine<ExitTitle>(0.1f);

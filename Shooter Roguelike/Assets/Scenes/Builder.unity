@@ -25827,7 +25827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &623736129
 Transform:
   m_ObjectHideFlags: 0
@@ -25857,7 +25857,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannons: []
+  fireRate: 0
   shootRange: 3
+  damage: 0
 --- !u!114 &623736131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25895,7 +25897,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486ec59b78406244c892cc3537d628fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
 --- !u!114 &623736134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79402,7 +79403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &1705714027
 Grid:
   m_ObjectHideFlags: 0
@@ -81971,129 +81972,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1815515335}
-    m_ColliderPaths:
-    - - X: -3200000
-        Y: 25600002
-      - X: -15999999
-        Y: 25600002
-      - X: -15999999
-        Y: 22400000
-      - X: -3200000
-        Y: 22400000
-    - - X: -16000000
-        Y: 25600002
-      - X: -41600000
-        Y: 25600002
-      - X: -41600000
-        Y: 22400000
-      - X: -16000000
-        Y: 22400000
-    - - X: 44799996
-        Y: 25600002
-      - X: 19200000
-        Y: 25600002
-      - X: 19200000
-        Y: 22400000
-      - X: 41600000
-        Y: 22400000
-      - X: 41600000
-        Y: 19200000
-      - X: 44799996
-        Y: 19200000
-    - - X: 19199998
-        Y: 25600002
-      - X: 3200000
-        Y: 25600002
-      - X: 3200000
-        Y: 22400000
-      - X: 19199998
-        Y: 22400000
-    - - X: -41600004
-        Y: 25600002
-      - X: -44800000
-        Y: 25600002
-      - X: -44800000
-        Y: 19200000
-      - X: -41600004
-        Y: 19200000
-    - - X: 44799996
-        Y: 19199998
-      - X: 41600000
-        Y: 19199998
-      - X: 41600000
-        Y: 3200000
-      - X: 44799996
-        Y: 3200000
-    - - X: -41600004
-        Y: 19199998
-      - X: -44800000
-        Y: 19199998
-      - X: -44800000
-        Y: 3200000
-      - X: -41600004
-        Y: 3200000
-    - - X: 44799996
-        Y: -3200000
-      - X: 41600000
-        Y: -3200000
-      - X: 41600000
-        Y: -15999999
-      - X: 44799996
-        Y: -15999999
-    - - X: -41600004
-        Y: -3200000
-      - X: -44800000
-        Y: -3200000
-      - X: -44800000
-        Y: -15999999
-      - X: -41600004
-        Y: -15999999
-    - - X: 44799996
-        Y: -16000000
-      - X: 41600000
-        Y: -16000000
-      - X: 41600000
-        Y: -22399998
-      - X: 19200000
-        Y: -22399998
-      - X: 19200000
-        Y: -25600000
-      - X: 44799996
-        Y: -25600000
-    - - X: -41600004
-        Y: -16000000
-      - X: -44800000
-        Y: -16000000
-      - X: -44800000
-        Y: -25600000
-      - X: -41600004
-        Y: -25600000
-    - - X: -16000000
-        Y: -22399998
-      - X: -41600000
-        Y: -22399998
-      - X: -41600000
-        Y: -25600000
-      - X: -16000000
-        Y: -25600000
-    - - X: 19199998
-        Y: -22399998
-      - X: 3200000
-        Y: -22399998
-      - X: 3200000
-        Y: -25600000
-      - X: 19199998
-        Y: -25600000
-    - - X: -3200000
-        Y: -22399998
-      - X: -15999999
-        Y: -22399998
-      - X: -15999999
-        Y: -25600000
-      - X: -3200000
-        Y: -25600000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 4.4799705, y: 0.32}
@@ -82252,6 +82131,7 @@ GameObject:
   - component: {fileID: 1941059324}
   - component: {fileID: 1941059323}
   - component: {fileID: 1941059322}
+  - component: {fileID: 1941059326}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -82346,6 +82226,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 1.1}
   m_EdgeRadius: 0
+--- !u!114 &1941059326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941059320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4944d0559002b742b6f678ec7d354b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 0}
+  lifeCanvas: {fileID: 0}
+  maxLife: 0
 --- !u!1 &1969238796
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerUnit : UnitObject
 {
 	public static PlayerUnit player { get; private set; }
-	UnitLife life;
+	public UnitLife life { get; private set; }
 
 	void Awake()
 	{
@@ -48,5 +48,11 @@ public class PlayerUnit : UnitObject
 	void EndGame()
 	{
 		EventHub.Publish(EventList.EndGame);
+	}
+
+	public void OnTriggerEnter2D(Collider2D col)
+	{
+		Item i = col.GetComponent<Item>();
+		if(i != null) { i.Catch(this); PublicData.totalItens++; }
 	}
 }

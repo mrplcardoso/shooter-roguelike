@@ -4,7 +4,6 @@ using EnemyTable = System.Collections.Generic.
 	Dictionary<EnemyType, Utility.Pooling.ObjectPooler<PoolableEnemy>>;
 using EnemyStatTable = System.Collections.Generic.
 	Dictionary<EnemyType, System.Collections.Generic.Dictionary<string, float>>;
-using static UnityEngine.EventSystems.EventTrigger;
 using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "Enemy Database",

@@ -7,6 +7,7 @@ public class EndGame : GameState
 {
 	public override IEnumerator OnEnterIntervaled()
 	{
+		PublicData.totalSeconds = ((int)Time.realtimeSinceStartup - PublicData.totalSeconds);
 		yield return new WaitForSeconds(0.2f);
 		EventHub.Publish(EventList.TransitionOn);
 		yield return new WaitForSeconds(1f);
