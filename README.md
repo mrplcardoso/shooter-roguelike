@@ -1,4 +1,4 @@
-# shooter-roguelike
+# Tank Maze (Shooter Rogue-Like)
 This game was made as content for a video game development course, focussed in study on random generation and procedural generation of elements. 
 Please disregard any limitations or inconveniences, and enjoy.
 
