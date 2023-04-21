@@ -1,16 +1,17 @@
 # shooter-roguelike
-This game was made as content for a video game development course. It represents a study on random generation and procedural generation of elements. 
+This game was made as content for a video game development course, focussed in study on random generation and procedural generation of elements. 
 Please disregard any limitations or inconveniences, and enjoy.
 
-Release: (link under construction)
+Release: https://gamejolt.com/games/tank_maze/802427
 
 ## Authors
-Marcos Cardoso (<a href=https://github.com/mrplcardoso>@mrplcardoso</a>)
+Marcos Cardoso 
+<a href=https://github.com/mrplcardoso>@mrplcardoso</a>
+mrplcardoso@gmail.com
 
 ## Requirements
 Unity 2022.3  
 Unity Web Module  
-GameJolt API
 
 ## Resources
 
@@ -25,5 +26,5 @@ Turret*: https://opengameart.org/content/tower-defence-basic-towers
 *Authors modified, edited or mixed to better suit the scope of the game.
 
 ## Other
-Level Generation Algorithm (pt-br):  
-RNG Explanation (pt-br):  
+Level Generation Algorithm (pt-br): https://youtu.be/foeeJZ_8fB8
+RNG Explanation (pt-br): https://youtu.be/U-pZYweHHG0
