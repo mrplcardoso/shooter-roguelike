@@ -2,7 +2,8 @@
 This game was made as content for a video game development course, focussed in study on random generation and procedural generation of elements. 
 Please disregard any limitations or inconveniences, and enjoy.
 
-Release: https://gamejolt.com/games/tank_maze/802427
+## Builds
+Web: https://gamejolt.com/games/tank_maze/802427
 
 ## Authors
 - Marcos Cardoso ([Game Jolt](https://gamejolt.com/@marcoscardoso1_b064/games), mrplcardoso@gmail.com): Programmer, Music Composer
