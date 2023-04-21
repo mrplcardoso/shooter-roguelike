@@ -5,9 +5,8 @@ Please disregard any limitations or inconveniences, and enjoy.
 Release: https://gamejolt.com/games/tank_maze/802427
 
 ## Authors
-Marcos Cardoso 
-<a href=https://github.com/mrplcardoso>@mrplcardoso</a>
-mrplcardoso@gmail.com
+Marcos Cardoso (mrplcardoso@gmail.com)  
+[Game Jolt](https://gamejolt.com/@marcoscardoso1_b064/games)
 
 ## Requirements
 Unity 2022.3  
