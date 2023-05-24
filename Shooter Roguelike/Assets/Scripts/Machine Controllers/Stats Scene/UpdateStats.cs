@@ -13,8 +13,9 @@ public class UpdateStats : StatsState
         button.onClick.AddListener(OnButtonPressed);
     }
 
-    public override void OnEnter()
+    public override IEnumerator OnEnterIntervaled()
     {
+        yield return null;
         button.interactable = true;
     }
 

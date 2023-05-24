@@ -5,16 +5,20 @@ using Utility.Pooling;
 
 public class PoolableBullet : MonoBehaviour, IPoolableObject
 {
+	[SerializeField] ParticleSystem explosion;
 	public BulletUnit bullet;
 	public Action OnActivate, OnDeactivate;
 
 	void Awake()
 	{
 		bullet = GetComponent<BulletUnit>();
+		explosion = Instantiate(explosion, transform.position, Quaternion.identity);
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
+		explosion.transform.position = transform.position;
+		explosion.gameObject.SetActive(true);
 		Deactivate();
 	}
 

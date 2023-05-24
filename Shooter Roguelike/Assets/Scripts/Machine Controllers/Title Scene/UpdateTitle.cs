@@ -2,33 +2,45 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Utility.Random;
+using System;
+using Utility.Audio;
 
 public class UpdateTitle : TitleState
 {
   [SerializeField] Button button;
   [SerializeField] TMP_InputField input;
+  [SerializeField] Toggle seedToggle;
 
   void Start()
   {
     input.interactable = false;
-    button.interactable = false;
+		seedToggle.interactable = false;
+    seedToggle.onValueChanged.AddListener(OnToggleChage);
+		button.interactable = false;
     button.onClick.AddListener(OnButtonPressed);
   }
 
   public override void OnEnter()
   {
-    input.interactable = true;
+    AudioHub.instance.PlayLoop(AudioList.TitleBGM, false);
+		seedToggle.interactable = true;
+		input.interactable = true;
     button.interactable = true;
+  }
+
+  void OnToggleChage(bool value)
+  {
+    if (value) { input.text = ((int)DateTime.Now.Ticks).ToString(); input.interactable = false; }
+    else { input.text = ""; input.interactable = true; }
   }
 
   void OnButtonPressed()
   {
-    input.interactable = false;
+		seedToggle.interactable = false;
+		input.interactable = false;
     button.interactable = false;
 
-    int seed = int.Parse(input.text);
-    if(seed <= 0) { seed = (int)Time.realtimeSinceStartup; }
+		int seed = string.IsNullOrEmpty(input.text) ? (int)DateTime.Now.Ticks : int.Parse(input.text);
 		
     PublicData.Initialize(seed);
 

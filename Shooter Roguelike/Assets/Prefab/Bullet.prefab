@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1997142035982615803}
   - component: {fileID: 3318226460310244211}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light_Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 192413564608421937}
   - component: {fileID: 5984860869293113331}
   - component: {fileID: 7803543975625796401}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea2c59cfe39c7c4fb89e54878bfbb8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 576859842541515475, guid: 53186d2a8f583f14e96a1b9f96bb1b8e, type: 3}
   bullet: {fileID: 0}
   lifeSpan: 3
 --- !u!114 &192413564608421937

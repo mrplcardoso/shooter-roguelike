@@ -8,12 +8,18 @@ public class UnitLife : MonoBehaviour
 	[SerializeField] Image bar;
 	public Canvas lifeCanvas;
 	[SerializeField] float maxLife;
+	[SerializeField] ParticleSystem explosion;
 
 	public Action OnDeath;
 
 	public float life { get; private set; }
 	public float current { get { return life; } 
 		set { life = Mathf.Clamp(value, 0f, maxLife); bar.fillAmount = life / maxLife; } }
+
+	void Awake()
+	{
+		explosion = Instantiate(explosion, Vector3.down * 5000, Quaternion.identity);
+	}
 
 	private void Start()
 	{
@@ -47,6 +53,9 @@ public class UnitLife : MonoBehaviour
 
 			if(current <= 0)
 			{
+				//TODO: time before call Death
+				explosion.transform.position = transform.position;
+				explosion.gameObject.SetActive(true);
 				if(OnDeath != null)
 				{ OnDeath(); }
 			}

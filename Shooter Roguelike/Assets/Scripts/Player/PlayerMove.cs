@@ -32,7 +32,7 @@ public class PlayerMove : MonoBehaviour
 	private void Start()
 	{
 		camera = SceneCamera.instance.GetComponent<CameraSlide>();
-		player.PhysicsAction += MoveCamera;
+		player.PostAction += MoveCamera;
 	}
 
 	private void OnDestroy()
@@ -64,7 +64,7 @@ public class PlayerMove : MonoBehaviour
 	void MoveCamera()
 	{
 		reactions(transform.position);
-		camera.Move(body.position, Time.fixedDeltaTime);
+		camera.Move(body.position, Time.deltaTime);
 	}
 
 	void AddReactions(EventData data)

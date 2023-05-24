@@ -8,7 +8,7 @@ namespace Utility.Audio
 	{
 		private void Awake()
 		{
-			if (SetInstance()) { return; }
+			if (!SetInstance()) { return; }
 
 			LoadMap();
 			Subscribing();
@@ -27,6 +27,7 @@ namespace Utility.Audio
 		{
 			AudioHub[] g = GameObject.FindObjectsOfType<AudioHub>();
 			if (g.Length > 1) { Destroy(gameObject); return false; }
+
 			instance = this; DontDestroyOnLoad(gameObject); return true;
 		}
 

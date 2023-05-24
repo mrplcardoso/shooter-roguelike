@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using Utility.EventCommunication;
 using Utility.EasingEquations;
+using Utility.Audio;
 using TMPro;
 
 public class StartStats : StatsState
@@ -13,6 +14,7 @@ public class StartStats : StatsState
   {
     EventHub.Publish(EventList.TransitionOff);
     yield return new WaitForSeconds(0.8f);
+    AudioHub.instance.PlayLoop(AudioList.TitleBGM);
     StartCoroutine(StatsView());
   }
 
