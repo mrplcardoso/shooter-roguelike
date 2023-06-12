@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 18429
+  controlID: 60
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 01000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 18430
+  controlID: 61
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 18421
+  controlID: 50
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b0bcfeffa0e3feff18fbffff88600000
+      m_ExpandedIDs: fcf9ffff26fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -556,9 +556,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.053913116, y: 0.53447264, z: 0.011736696}
+    m_Target: {x: 340.59375, y: 100.09787, z: 0}
     speed: 2
-    m_Value: {x: -0.053913116, y: 0.53447264, z: 0.011736696}
+    m_Value: {x: 340.59375, y: 100.09787, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -609,9 +609,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.470295
+    m_Target: 81.02154
     speed: 2
-    m_Value: 1.470295
+    m_Value: 81.02154
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -705,23 +705,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefab/Particles
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefab/Particles
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Marcos Cardoso\Documents\Unity Projects\shooter-roguelike\Shooter
     Roguelike
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 7}
-    m_SelectedIDs: fccb0000
-    m_LastClickedID: 52220
-    m_ExpandedIDs: 0000000016670000186700001a6700002267000024670000306700000eb10000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: d6610000
+    m_LastClickedID: 25046
+    m_ExpandedIDs: 000000009e610000a0610000a2610000a4610000a6610000a8610000aa610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -749,7 +749,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000016670000186700001a6700002267000024670000306700000eb10000
+    m_ExpandedIDs: 000000009e610000a0610000a2610000a4610000a6610000a8610000aa610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -774,9 +774,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: e4610000
+    m_LastClickedInstanceID: 25060
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300004e920000106500001a650000206d0000d06b0000ea6500000a660000000000003e610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -852,8 +852,8 @@ MonoBehaviour:
     y: 0
     width: 385.59998
     height: 730.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -893,7 +893,7 @@ MonoBehaviour:
     m_CachedPref: 188
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 25060
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

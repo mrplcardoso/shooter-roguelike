@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Utility.EventCommunication;
+using Utility.Audio;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerShoot : MonoBehaviour
 	private void Shoot(EventData data)
 	{
 		//TODO: add interval
+		AudioHub.instance.PlayOneTime(AudioList.Launch);
 		for (int i = 0; i < cannons.Length; ++i)
 		{
 			PublicData.totalShoots++;

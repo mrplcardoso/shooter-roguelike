@@ -14,34 +14,38 @@ public class UpdateTitle : TitleState
   void Start()
   {
     input.interactable = false;
-		seedToggle.interactable = false;
+    seedToggle.interactable = false;
     seedToggle.onValueChanged.AddListener(OnToggleChage);
-		button.interactable = false;
+    button.interactable = false;
     button.onClick.AddListener(OnButtonPressed);
   }
 
   public override void OnEnter()
   {
     AudioHub.instance.PlayLoop(AudioList.TitleBGM, false);
-		seedToggle.interactable = true;
-		input.interactable = true;
+    seedToggle.interactable = true;
+    input.interactable = true;
     button.interactable = true;
   }
 
   void OnToggleChage(bool value)
   {
-    if (value) { input.text = ((int)DateTime.Now.Ticks).ToString(); input.interactable = false; }
-    else { input.text = ""; input.interactable = true; }
+    AudioHub.instance.PlayOneTime(AudioList.Click);
+    if (value)
+    { input.text = ((int)DateTime.Now.Ticks).ToString(); input.interactable = false; }
+    else
+    { input.text = ""; input.interactable = true; }
   }
 
   void OnButtonPressed()
   {
-		seedToggle.interactable = false;
-		input.interactable = false;
+    AudioHub.instance.PlayOneTime(AudioList.Click);
+    seedToggle.interactable = false;
+    input.interactable = false;
     button.interactable = false;
 
-		int seed = string.IsNullOrEmpty(input.text) ? (int)DateTime.Now.Ticks : int.Parse(input.text);
-		
+    int seed = string.IsNullOrEmpty(input.text) ? (int)DateTime.Now.Ticks : int.Parse(input.text);
+
     PublicData.Initialize(seed);
 
     titleMachine.ChangeStateCoroutine<ExitTitle>(0.1f);

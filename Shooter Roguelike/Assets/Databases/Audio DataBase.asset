@@ -16,5 +16,30 @@ MonoBehaviour:
   - name: Title BGM
     clip: {fileID: 8300000, guid: f10509e741870c0419efa812eccccbe9, type: 3}
     type: 1
+    volume: 0.3
+    source: {fileID: 0}
+  - name: Game BGM
+    clip: {fileID: 8300000, guid: b5324165d66af064bb5744ed995401dd, type: 3}
+    type: 1
+    volume: 0.3
+    source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: c81d3bea900157e4baf701ca5f2cf232, type: 3}
+    type: 0
+    volume: 1
+    source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: a82c77dc6c530944e87149aa864d83cf, type: 3}
+    type: 0
+    volume: 1
+    source: {fileID: 0}
+  - name: Launch
+    clip: {fileID: 8300000, guid: 6a7d054e691a32c4bb93d7ac1a27d580, type: 3}
+    type: 0
+    volume: 1
+    source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: cde1b720de89d224cb2fd6f6e8d55513, type: 3}
+    type: 0
     volume: 1
     source: {fileID: 0}
