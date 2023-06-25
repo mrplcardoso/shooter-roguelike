@@ -29,6 +29,7 @@ Click*: https://opengameart.org/content/engine-loop-heavy-vehicletank
 Tileset* (grass, water, asphalt): https://opengameart.org/content/top-down-simple-tile-sets  
 Tanks/Weapons/FX*: https://craftpix.net/freebies/free-2d-battle-tank-game-assets  
 Turret*: https://opengameart.org/content/tower-defence-basic-towers  
+Itens*: https://opengameart.org/content/powers-icons  
 
 *Authors modified, edited or mixed to better suit the scope of the game.
 
