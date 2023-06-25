@@ -11,9 +11,9 @@ public class Cannon : MonoBehaviour
 		layer = (int)Mathf.Log(bulletLayer.value, 2);
 	}
 
-	public void Shoot(float damage)
+	public void Shoot(BulletType type, float damage)
 	{
-		PoolableBullet next = BulletPooler.pool.NextBullet();
+		PoolableBullet next = BulletPooler.pool.NextBullet(type);
 		if (next == null) { PrintConsole.Warning("No more bullets"); return; }
 
 		next.transform.position = transform.position;

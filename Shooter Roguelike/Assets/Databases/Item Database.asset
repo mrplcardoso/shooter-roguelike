@@ -13,6 +13,18 @@ MonoBehaviour:
   m_Name: Item Database
   m_EditorClassIdentifier: 
   itens:
+  - name: Area Bullet
+    prefab: {fileID: -4603216358908723567, guid: 9765828569e84eb4a9fb9dd945f66c81, type: 3}
+    startSize: 10
+  - name: Fire Rate Up
+    prefab: {fileID: -4603216358908723567, guid: 45d8342f176444746aa4a69081add79c, type: 3}
+    startSize: 10
   - name: MedKit
     prefab: {fileID: -4603216358908723567, guid: a88bd3daed442204a9053ee968ec2993, type: 3}
+    startSize: 10
+  - name: Shield
+    prefab: {fileID: -4603216358908723567, guid: 273563b9203131e46946e8adbfff6d0e, type: 3}
+    startSize: 10
+  - name: Speed Up
+    prefab: {fileID: -4603216358908723567, guid: ebff00dc635a8604bbb8e768d5cff464, type: 3}
     startSize: 10

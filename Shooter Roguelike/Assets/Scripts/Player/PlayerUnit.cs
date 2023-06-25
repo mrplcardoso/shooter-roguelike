@@ -11,6 +11,8 @@ public class PlayerUnit : UnitObject
 	{
 		player = this;
 		life = GetComponent<UnitLife>();
+		shield = Instantiate(prefab);
+		shield.Deactivate();
 	}
 
 	void Start()
@@ -54,5 +56,14 @@ public class PlayerUnit : UnitObject
 	{
 		Item i = col.GetComponent<Item>();
 		if(i != null) { i.Catch(this); PublicData.totalItens++; }
+	}
+
+	[SerializeField] ShieldObject prefab;
+	ShieldObject shield;
+
+	public void SetShield()
+	{
+		shield.center = transform;
+		shield.Activate();
 	}
 }

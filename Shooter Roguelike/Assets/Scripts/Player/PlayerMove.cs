@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour
 
 	Vector2 target;
 	Vector2 direction { get { return (target - (Vector2)transform.position); } }
-	float speed = 1;
+	[SerializeField] float speed = 1;
 	readonly float distanceOffset = 0.0001f;
 	float targetDistance { get { return direction.magnitude; } }
 	bool moving;
@@ -76,5 +76,10 @@ public class PlayerMove : MonoBehaviour
 			reactions -= reactant.Reaction;
 			reactions += reactant.Reaction;
 		}
+	}
+
+	public void AddSpeed(float value)
+	{
+		speed = Mathf.Clamp(speed + value, 1, 2.5f);
 	}
 }

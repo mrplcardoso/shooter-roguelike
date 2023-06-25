@@ -45,23 +45,28 @@ public class UnitLife : MonoBehaviour
 		maxLife = life = value;
 	}
 
+	public void Damage(float value)
+	{
+		ChangeBy(-value);
+		AudioHub.instance.PlayOneTime(AudioList.Hit);
+
+		if (current <= 0)
+		{
+			//TODO: time before call Death
+			AudioHub.instance.PlayOneTime(AudioList.Explosion);
+			explosion.transform.position = transform.position;
+			explosion.gameObject.SetActive(true);
+			if (OnDeath != null)
+			{ OnDeath(); }
+		}
+	}
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.CompareTag("Bullet"))
 		{
 			BulletUnit bullet = collision.GetComponent<BulletUnit>();
-			ChangeBy(-bullet.damage);
-			AudioHub.instance.PlayOneTime(AudioList.Hit);
-
-			if(current <= 0)
-			{
-				//TODO: time before call Death
-				AudioHub.instance.PlayOneTime(AudioList.Explosion);
-				explosion.transform.position = transform.position;
-				explosion.gameObject.SetActive(true);
-				if(OnDeath != null)
-				{ OnDeath(); }
-			}
+			Damage(-bullet.damage);
 		}
 	}
 }

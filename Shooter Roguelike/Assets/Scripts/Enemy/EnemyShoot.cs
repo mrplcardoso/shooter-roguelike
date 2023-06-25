@@ -50,7 +50,7 @@ public class EnemyShoot : MonoBehaviour
 	{
 		for (int i = 0; i < cannons.Length; ++i)
 		{
-			cannons[i].Shoot(damage);
+			cannons[i].Shoot(BulletType.Standard, damage);
 		}
 	}
 

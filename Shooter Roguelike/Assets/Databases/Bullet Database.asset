@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ffa9a3d4f1411488666ea65668d722, type: 3}
   m_Name: Bullet Database
   m_EditorClassIdentifier: 
-  bullet:
-    name: Bullet
+  bullets:
+  - name: Standard
     prefab: {fileID: 6422769228903157308, guid: 835b2ab89a0e9524084f6b2f4f69a5c5, type: 3}
     startSize: 50
+    type: 0
+    ammunition: -1
+  - name: Area
+    prefab: {fileID: 6422769228903157308, guid: 6a26b5f1430fd4741a5b4fa99c5132c0, type: 3}
+    startSize: 10
+    type: 1
+    ammunition: 3

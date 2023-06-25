@@ -2,12 +2,16 @@
 using UnityEngine;
 using Utility.Pooling;
 
+using BulletTable = System.Collections.Generic.Dictionary<BulletType,
+	Utility.Pooling.ObjectPooler<PoolableBullet>>;
+
 public class BulletPooler : MonoBehaviour
 {
 	public static BulletPooler pool { get; private set; }
 
 	[SerializeField] BulletDatabase database;
-	ObjectPooler<PoolableBullet> bullets;
+	Dictionary<BulletType, BulletEntry> entries;
+	BulletTable bullets;
 
 	private void Awake()
 	{
@@ -16,10 +20,16 @@ public class BulletPooler : MonoBehaviour
 		pool = this;
 
 		bullets = database.LoadTable();
+		entries = database.LoadEntries();
 	}
 
-	public PoolableBullet NextBullet()
+	public BulletEntry GetEntry(BulletType type)
 	{
-		return bullets.GetObject();
+		return entries[type];
+	}
+
+	public PoolableBullet NextBullet(BulletType type)
+	{
+		return bullets[type].GetObject();
 	}
 }
