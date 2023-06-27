@@ -6,9 +6,8 @@ Please disregard any limitations or inconveniences, and enjoy.
 Web: https://gamejolt.com/games/tank_maze/802427
 
 ## To Do
-- Add new itens: area missile, shield, speed up, fire rate up
 - Add SFX: item caught, shield hitted, next run
-- Add VFX: item caught, shield (form, hit, unform), shoot
+- Add VFX: shield (form, hit, unform), shoot
 
 ## Authors
 - Marcos Cardoso ([Game Jolt](https://gamejolt.com/@marcoscardoso1_b064/games), mrplcardoso@gmail.com): Programmer, Music Composer

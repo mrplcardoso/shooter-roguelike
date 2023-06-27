@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca650fec9c499c44b0ddea632fee685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shoot: {fileID: 1863977438236404623, guid: 069e6d0aa16483a439d8e6d68763534f, type: 3}
   bulletLayer:
     serializedVersion: 2
     m_Bits: 64

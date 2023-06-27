@@ -7,6 +7,8 @@ namespace Utility.EventCommunication
 		public const string ReactionToPlayer = "Reaction To Player";
 		public const string EndGame = "End Game";
 
+		public const string ItemCatch = "Item Catch";
+
 		public const string OnClickGround = "On Click Ground";
 		public const string OnClickEnemy = "On Click Enemy";
 		public const string EnemyKilled = "Enemy Killed";

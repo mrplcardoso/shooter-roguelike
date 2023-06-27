@@ -38,7 +38,6 @@ public class PlayerUnit : UnitObject
 	{
 		if (PhysicsAction != null)
 		{ PhysicsAction(); }
-		life.lifeCanvas.transform.position = transform.position + Vector3.up * 0.65f;
 	}
 
 	public override void PostUpdate()

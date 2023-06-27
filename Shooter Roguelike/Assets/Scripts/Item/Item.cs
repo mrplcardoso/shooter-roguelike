@@ -12,5 +12,6 @@ public abstract class Item : MonoBehaviour
 		pool = GetComponent<PoolableItem>();
 	}
 
+	//TODO: add catch SFX
 	public abstract void Catch(PlayerUnit player);
 }

@@ -23,7 +23,7 @@ public class ItemPooler : MonoBehaviour
 
 	public PoolableItem NextItem()
 	{
-		int r = 3;//RandomStream.NextInt(0, itemArray.Count);
+		int r = 1;//RandomStream.NextInt(0, itemArray.Count);
 		PoolableItem i = itemArray[r].GetObject();
 		return i;
 	}

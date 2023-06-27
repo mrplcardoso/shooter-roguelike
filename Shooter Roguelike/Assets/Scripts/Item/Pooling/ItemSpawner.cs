@@ -48,7 +48,9 @@ public class ItemSpawner : MonoBehaviour, IUpdatable
 		if (next == null)
 		{ PrintConsole.Warning("No more itens"); return; }
 
-		next.transform.position = RandomStream.CirclePosition(position, 2f);
+		Vector3 p = RandomStream.CirclePosition(position, 2f);
+		p.z = 1;
+		next.transform.position = p;
 		next.Activate();
 		spawns++;
 	}

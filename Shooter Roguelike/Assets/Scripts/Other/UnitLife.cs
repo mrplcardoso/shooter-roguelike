@@ -7,7 +7,6 @@ using Utility.Audio;
 public class UnitLife : MonoBehaviour
 {
 	[SerializeField] Image bar;
-	public Canvas lifeCanvas;
 	[SerializeField] float maxLife;
 	[SerializeField] ParticleSystem explosion;
 
@@ -25,7 +24,6 @@ public class UnitLife : MonoBehaviour
 	private void Start()
 	{
 		if (bar == null) { PrintConsole.Error(name + " life bar not set in Inspector"); }
-		lifeCanvas = bar.GetComponentInParent<Canvas>();
 		current = maxLife;
 	}
 
@@ -66,7 +64,7 @@ public class UnitLife : MonoBehaviour
 		if(collision.CompareTag("Bullet"))
 		{
 			BulletUnit bullet = collision.GetComponent<BulletUnit>();
-			Damage(-bullet.damage);
+			Damage(bullet.damage);
 		}
 	}
 }
