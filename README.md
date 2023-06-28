@@ -6,8 +6,8 @@ Please disregard any limitations or inconveniences, and enjoy.
 Web: https://gamejolt.com/games/tank_maze/802427
 
 ## To Do
-- Add SFX: item caught, shield hitted, next run
-- Add VFX: shield (form, hit, unform), shoot
+- Add SFX: next run
+- Add VFX: next run
 
 ## Authors
 - Marcos Cardoso ([Game Jolt](https://gamejolt.com/@marcoscardoso1_b064/games), mrplcardoso@gmail.com): Programmer, Music Composer

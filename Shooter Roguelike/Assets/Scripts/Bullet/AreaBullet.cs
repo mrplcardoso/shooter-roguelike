@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AreaBullet : MonoBehaviour
 {
-	//TODO: add SFX
 	BulletUnit unit;
 	[SerializeField] ParticleSystem areaExplosion;
 	[SerializeField] float range;

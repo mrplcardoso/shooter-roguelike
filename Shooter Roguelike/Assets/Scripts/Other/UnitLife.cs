@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Utility.Audio;
 
-public class UnitLife : MonoBehaviour
+public class UnitLife : MonoBehaviour, IDamageable
 {
 	[SerializeField] Image bar;
 	[SerializeField] float maxLife;
@@ -46,16 +46,13 @@ public class UnitLife : MonoBehaviour
 	public void Damage(float value)
 	{
 		ChangeBy(-value);
-		AudioHub.instance.PlayOneTime(AudioList.Hit);
-
+	
 		if (current <= 0)
 		{
-			//TODO: time before call Death
 			AudioHub.instance.PlayOneTime(AudioList.Explosion);
 			explosion.transform.position = transform.position;
 			explosion.gameObject.SetActive(true);
-			if (OnDeath != null)
-			{ OnDeath(); }
+			if (OnDeath != null) { OnDeath(); }
 		}
 	}
 

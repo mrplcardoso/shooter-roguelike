@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using Utility.Pooling;
+using Utility.Audio;
 
 public class PoolableBullet : MonoBehaviour, IPoolableObject
 {
@@ -17,6 +18,7 @@ public class PoolableBullet : MonoBehaviour, IPoolableObject
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
+		AudioHub.instance.PlayOneTime(AudioList.Hit);
 		explosion.transform.position = transform.position;
 		explosion.gameObject.SetActive(true);
 		Deactivate();

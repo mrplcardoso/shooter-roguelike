@@ -14,5 +14,6 @@ namespace Utility.Audio
 		public const string Explosion = "Explosion";
 		public const string Launch = "Launch";
 		public const string Hit = "Hit";
+		public const string Item = "Item";
 	}
 }

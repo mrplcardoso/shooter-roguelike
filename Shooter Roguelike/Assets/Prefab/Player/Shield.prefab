@@ -95,9 +95,11 @@ GameObject:
   - component: {fileID: 871932468588886765}
   - component: {fileID: 871932468588886764}
   - component: {fileID: 5935033386165645636}
+  - component: {fileID: -5690532292207722310}
+  - component: {fileID: -1797264856189849656}
   m_Layer: 8
   m_Name: Shield
-  m_TagString: Shield
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,3 +149,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {fileID: 0}
+  hitPoints: 10
+--- !u!114 &-5690532292207722310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871932468588886767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0906253343650e543a7b94dcafd1b0fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSprite: 1
+  speed: 2
+  pingpong: 0
+--- !u!114 &-1797264856189849656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871932468588886767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7faa191ac8f1adc4cbc8420ac2772bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2

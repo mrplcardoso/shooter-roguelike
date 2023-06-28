@@ -43,3 +43,8 @@ MonoBehaviour:
     type: 0
     volume: 1
     source: {fileID: 0}
+  - name: Item
+    clip: {fileID: 8300000, guid: 1216b13cd9b227245bcfd40bea882f82, type: 3}
+    type: 0
+    volume: 1
+    source: {fileID: 0}

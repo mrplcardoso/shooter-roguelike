@@ -57,7 +57,6 @@ public class PlayerShoot : MonoBehaviour
 
 	private void Shoot(EventData data)
 	{
-		print(timer);
 		if(shoot)
 		{
 			AudioHub.instance.PlayOneTime(AudioList.Launch);

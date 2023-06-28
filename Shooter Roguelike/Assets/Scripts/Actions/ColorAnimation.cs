@@ -7,7 +7,12 @@ public class ColorAnimation : MonoBehaviour
 {
 	Coroutine routine;
   Graphic graphic;
-	public Color color { get { return graphic.color; } set { graphic.color = value; }	}
+	SpriteRenderer sprite;
+
+	[SerializeField] bool isSprite;
+
+	public Color color { get { return isSprite ? sprite.color : graphic.color; } 
+	set { if(isSprite) sprite.color = value; else graphic.color = value; }	}
 	public float red { get { return color.r; } set { Color c = color; c.r = value; color = c; } }
 	public float green { get { return color.g; } set { Color c = color; c.g = value; color = c; } }
 	public float blue { get { return color.b; } set { Color c = color; c.b = value; color = c; } }
@@ -18,7 +23,8 @@ public class ColorAnimation : MonoBehaviour
 
 	private void Awake()
 	{
-    graphic = GetComponent<Graphic>();
+    graphic = GetComponentInChildren<Graphic>();
+		sprite = GetComponentInChildren<SpriteRenderer>();
   }
 
 	public void Animate(Color target)
@@ -26,6 +32,11 @@ public class ColorAnimation : MonoBehaviour
 		if (routine != null)
 		{ StopCoroutine(routine); }
 		routine = StartCoroutine(Cycle(target));
+	}
+
+	public void Animate(Color target, float t)
+	{
+		color = EasingColorEquations.Linear(color, target, t);
 	}
 
 	public void Stop(Color end)

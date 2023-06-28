@@ -36,6 +36,7 @@ public class ItemSpawner : MonoBehaviour, IUpdatable
 
 	void Spawn()
 	{
+		//TODO: resolve spawn collision
 		Vector2 position = DungeonLevel.dungeon.RandomRoomPosition();
 		if (position.y <= -5000)
 		{ PrintConsole.Warning("No space for itens"); return; }

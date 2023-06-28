@@ -34,8 +34,12 @@ public class EnemyShoot : MonoBehaviour, IPlayerReact
 	#region Shoot
 
 	Vector3 playerPosition;
+	[SerializeField] LayerMask visionMask;
 	[SerializeField] float shootRange;
 	bool inRange { get { return shootRange > (playerPosition - transform.position).magnitude; } }
+	bool inView { get { RaycastHit2D hit = Physics2D.Raycast(transform.position, playerPosition - transform.position, shootRange, visionMask);
+	print(hit.collider.gameObject.tag);
+	return hit.collider.gameObject.CompareTag("Player"); } }
 
 	float elapsedTime;
 	public float damage;
@@ -43,7 +47,7 @@ public class EnemyShoot : MonoBehaviour, IPlayerReact
 	private void Shoot()
 	{
 		elapsedTime += Time.deltaTime;
-		if (inRange)
+		if (inRange && inView)
 		{
 			if (elapsedTime > fireRate)
 			{

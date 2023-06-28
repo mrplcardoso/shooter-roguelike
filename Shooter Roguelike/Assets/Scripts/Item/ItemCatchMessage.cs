@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utility.EventCommunication;
 using Utility.EasingEquations;
+using Utility.Audio;
 using TMPro;
 
 public class ItemCatchMessage : MonoBehaviour
@@ -27,6 +28,7 @@ public class ItemCatchMessage : MonoBehaviour
 
     void OnItemCatch(EventData data)
     {
+        AudioHub.instance.PlayOneTime(AudioList.Item);
         string s = (string)data.eventInformation;
         textMesh.text = s;
         StartCoroutine(MessageTransition());
