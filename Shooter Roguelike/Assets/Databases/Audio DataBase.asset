@@ -48,3 +48,8 @@ MonoBehaviour:
     type: 0
     volume: 1
     source: {fileID: 0}
+  - name: Level Complete
+    clip: {fileID: 8300000, guid: 00cc61e4c38bfb2489e3330441707db5, type: 3}
+    type: 0
+    volume: 2
+    source: {fileID: 0}

@@ -23,6 +23,7 @@ Ombudsman: https://www.dafont.com/ombudsman-alternate.font
 
 ### VFX
 Click*: https://opengameart.org/content/engine-loop-heavy-vehicletank  
+Level Complete*: https://opengameart.org/content/win-sound-2  
 
 ### Sprites
 Tileset* (grass, water, asphalt): https://opengameart.org/content/top-down-simple-tile-sets  

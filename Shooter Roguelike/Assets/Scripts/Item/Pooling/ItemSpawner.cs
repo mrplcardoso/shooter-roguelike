@@ -36,7 +36,6 @@ public class ItemSpawner : MonoBehaviour, IUpdatable
 
 	void Spawn()
 	{
-		//TODO: resolve spawn collision
 		Vector2 position = DungeonLevel.dungeon.RandomRoomPosition();
 		if (position.y <= -5000)
 		{ PrintConsole.Warning("No space for itens"); return; }
@@ -49,9 +48,13 @@ public class ItemSpawner : MonoBehaviour, IUpdatable
 		if (next == null)
 		{ PrintConsole.Warning("No more itens"); return; }
 
-		Vector3 p = RandomStream.CirclePosition(position, 2f);
-		p.z = 1;
-		next.transform.position = p;
+		Vector3 random = RandomStream.CirclePosition(position, 2f);
+		random.z = 1;
+
+		Collider2D col = Physics2D.OverlapCircle(random, 1f);
+		if(col != null) { return; }
+
+		next.transform.position = random;
 		next.Activate();
 		spawns++;
 	}

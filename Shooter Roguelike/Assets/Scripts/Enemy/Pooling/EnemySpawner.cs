@@ -36,7 +36,6 @@ public class EnemySpawner : MonoBehaviour, IUpdatable
 
 	void Spawn()
 	{
-		//TODO: resolve spawn collision
 		Vector2 position = DungeonLevel.dungeon.RandomRoomPosition();
 		if (position.y <= -5000) { PrintConsole.Warning("No space for enemies"); return; }
 
@@ -48,7 +47,11 @@ public class EnemySpawner : MonoBehaviour, IUpdatable
 		PoolableEnemy next = EnemyPooler.pool.NextEnemy(type);
 		if (next == null) { PrintConsole.Warning("No more enemies"); return; }
 
-		next.transform.position = RandomStream.CirclePosition(position, 2f);
+		Vector2 random = RandomStream.CirclePosition(position, 2f);
+		Collider2D col = Physics2D.OverlapCircle(random, 1f);
+		if(col != null) { return; }
+
+		next.transform.position = random;
 		next.Activate();
 		spawns++;
 	}
