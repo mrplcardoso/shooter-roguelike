@@ -8,7 +8,7 @@ public class PlayerAim : MonoBehaviour
 	PlayerUnit player;
 	[SerializeField] Transform cannon;
 
-	Vector2 mousePosition { get { return ClickHandler.clickHandler.position; } }
+	Vector2 clickPosition { get { return ClickHandler.clickHandler.position; } }
 
 	private void Awake()
 	{
@@ -32,7 +32,9 @@ public class PlayerAim : MonoBehaviour
 
 	public void ReadInput()
 	{
-		angularDirection = (mousePosition - (Vector2)cannon.position).normalized;
+		if(ClickHandler.clickHandler.touchInput && !ClickHandler.clickHandler.touching) { return; }
+
+		angularDirection = (clickPosition - (Vector2)cannon.position).normalized;
 		angleRotation = (Mathf.Atan2(angularDirection.y, angularDirection.x) * Mathf.Rad2Deg) - 90f;
 	}
 

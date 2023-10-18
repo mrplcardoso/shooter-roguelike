@@ -5,7 +5,7 @@ using Utility.Random;
 
 public class EnemySpawner : MonoBehaviour, IUpdatable
 { 
-	int spawns = 0;
+	[SerializeField] int spawns;
 	float elapsedTime;
 
 	[SerializeField] float distance;
@@ -16,12 +16,13 @@ public class EnemySpawner : MonoBehaviour, IUpdatable
 
 	private void Start()
 	{
+		spawns = 0;
 		EventHub.Publish(EventList.AddUpdatable, new EventData(this));
 	}
 
 	public void FrameUpdate()
 	{
-		if(spawns == PublicData.enemiesPerLevel)
+		if(spawns >= PublicData.enemiesPerLevel)
 		{ gameObject.SetActive(false); }
 
 		if (pauseSpawn) { return; }

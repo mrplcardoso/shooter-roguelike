@@ -412,12 +412,15 @@ public class DungeonLevel : MonoBehaviour
 		return false;
 	}
 
+	Queue<int> lastRooms = new Queue<int>(5);
 	public Vector2 RandomRoomPosition()
 	{
 		DungeonRoom room = level[RandomStream.NextInt(0, level.Count)];
-		if(room.enemyCapacity == 0)
-		{ return Vector2.down * 5000; }
-		room.enemyCapacity--;
+		if (lastRooms.Contains(room.GetInstanceID())) { return Vector2.down * 5000; }
+
+		lastRooms.Enqueue(room.GetInstanceID());
+		if (lastRooms.Count > 5) { lastRooms.Dequeue(); }
+
 		return room.transform.position;
 	}
 }

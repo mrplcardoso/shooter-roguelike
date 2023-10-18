@@ -94,7 +94,7 @@ public class UpdateGame : GameState
 	#endregion
 
 	#region Kills
-	int killCount;
+	[SerializeField] int killCount;
 
 	void OnKill(EventData data)
 	{
